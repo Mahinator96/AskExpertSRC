@@ -1,0 +1,46 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+// .brands
+  .brands {
+    // .team__brands__container
+    &-container {
+      --width: 1804px;
+      width: 100%;
+    }
+    // .team__brands-list
+    &-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: toRem(0) toRem(30);
+  
+      @media (max-width: 640.9px) {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: toRem(10);
+      }
+    }
+    // .team__brands-item
+    &-item {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      
+  
+      @media (max-width: 640.9px) {
+        // width: 25%;
+      }
+      // .team__brands-item img
+      img {
+        width: 100%;
+        // height: auto;
+
+        @media (max-width: 640.9px) {
+          max-height: toRem(40);
+          object-fit: contain;
+        }
+      }
+    }
+  }

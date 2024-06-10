@@ -1,0 +1,122 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+/* HERO */
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 168px);
+  margin-bottom: toRem(140);
+  @include adaptiv-mp(140, 70, margin-bottom);
+
+  //.hero::before
+  &::before  {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url(@img/hero/photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (max-width: 520px) {
+      background-image: url(@img/hero/photo-mobile.jpg);
+    }
+  }
+
+  @media (max-width: 1040px) {
+    height: calc(100vh - 132px);
+  }
+  @media (max-width: 768.9px) {
+    height: calc(100vh - 65px);
+  }
+  // .hero .container
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  // .hero__wrapper
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+    
+  }
+  // .hero__grouptitle
+  &__grouptitle {
+    max-width: toRem(554);
+    width: 100%;
+
+    @media (max-width: 800px) {
+      width: fit-content;
+    }
+    // .grouptitle--white
+    &--white {
+    }
+    // .hero__grouptitle .grouptitle__title
+    .grouptitle__title {
+      margin-bottom: toRem(20);
+      // .grouptitle__title--yellow
+      &--yellow {
+      }
+    }
+    // .hero__grouptitle-text
+    &-text {
+      margin-bottom: toRem(25);
+      max-width: 26.9375em;
+    }
+    // .grouptitle__subtitle
+    &-subtitle {
+      max-width: 8.7em;
+      // .grouptitle__subtitle--main
+      &--main {
+      }
+    }
+  }
+  // .hero__button
+  &__button {
+    padding-top: toRem(8);
+    padding-right: toRem(10);
+    padding-bottom: toRem(8);
+    transition: 0.3s ease;
+    overflow: hidden;
+
+    &::before {
+      transition: 0.3s ease;
+    }
+
+    span {
+      transition: 0.3s ease;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        padding-left: toRem(37);
+        padding-right: toRem(37);
+        
+        &::before {
+          left: -100%;
+          // transform: scale(45);
+        }
+
+        span {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    // .hero__button::before
+    &::before {
+      background-image: url(@img/icons/icons.svg#home-hero-book);
+      background-size: cover;
+    }
+    // padding: toRem(8) toRem(10);
+  }
+}

@@ -1,0 +1,33 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+.block-decor {
+  position: relative;
+  @include adaptiv-mp(32, 18, "font-size");
+  color: $white;
+  padding: toRem(90) toRem(30);
+  @include adaptiv-mp(90, 40, padding-top);
+  @include adaptiv-mp(90, 40, padding-bottom);
+  @include adaptiv-mp(30, 15, padding-right);
+  @include adaptiv-mp(30, 15, padding-left);
+  background-color: $dark;
+  border-radius: toRem(30);
+  overflow: hidden;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right center;
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 21.91%;
+    background-image: url(@img/icons/icons.svg#block-decor-1);
+  }
+}

@@ -1,0 +1,15 @@
+.just-validate-error-field,
+.just-validate-error-label {
+  font-weight: 600;
+  border-bottom-color: rgb(184, 17, 17);
+}
+.error-container {
+  position: absolute; 
+  bottom: -25px; 
+  right: 0;
+
+  &.error-container--check {
+    right: auto;
+    left: 0;
+  }
+}

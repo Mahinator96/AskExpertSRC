@@ -1,0 +1,8 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.team__contact {
+  @include adaptiv-mp(150, 70, margin-bottom);
+}

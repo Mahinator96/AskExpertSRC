@@ -1,0 +1,12 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.services-single__hero {
+  margin-bottom: 0;
+  
+  &::before {
+    background-image: url(@img/services-single-hero/bg.jpg);
+  }
+}

@@ -1,0 +1,76 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.team {
+  @include adaptiv-mp(130, 60, margin-bottom);
+  
+  // .team-home 
+  &-home {
+    margin-bottom: 0;
+  }
+  // .team__top
+  &__top {
+    position: relative;
+    // height: toRem(824);
+    @include adaptiv-mp(824, 400, height);
+    background-image: url(@img/team/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    // .team__top
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(0deg, #181818 0.02%, rgba(24, 24, 24, 0.00) 101.24%);
+    }
+    // .team__container    
+    &-container {
+      position: relative;
+      height: 100%;
+      z-index: 2;
+      padding-bottom: toRem(88);
+      border-bottom: 1px dashed rgba(#f5f5f5, 0.1);
+    }
+  }
+  // .team__grouptitle
+  &__grouptitle {
+    justify-content: end;
+    height: 100%;
+
+    // .team__grouptitle .grouptitle__title
+    .grouptitle__title {
+      margin-bottom: toRem(8);
+    }
+    // .team__grouptitle .grouptitle__subtitle
+    .grouptitle__subtitle {
+      color: $white;
+      margin-bottom: toRem(22);
+    }
+    // .team__grouptitle-button
+    &-button {
+      padding: toRem(12) toRem(30);
+      border: toRem(2) solid $yellow;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: $white;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  &__brands {
+    @include adaptiv-mp(75, 10, padding-top);
+    @include adaptiv-mp(75, 10, padding-bottom);
+    background-color: $dark;
+
+    .brands-item {
+      opacity: 0.5;
+    }
+  }
+}

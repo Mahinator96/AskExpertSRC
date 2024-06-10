@@ -1,0 +1,116 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+.subscribe {
+  @include adaptiv-mp(150, 70, margin-bottom);
+  
+  // .subscribe__wrapper
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toRem(40);
+    color: $white;
+    padding: toRem(85) !important;
+    background-color: $dark;
+    border-radius: toRem(20);
+    overflow: hidden;
+
+    @media (max-width: 1040px) {
+      flex-direction: column;
+      padding: toRem(60) toRem(40) !important;
+    }
+    @media (max-width: 768.9px) {
+      padding: toRem(40) toRem(20) !important;
+    }
+
+    // .subscribe__wrapper::after
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 22.83%;
+      height: 100%;
+      background-image: url(@img/icons/icons.svg#subscribe-decor);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left center;
+
+      @media (max-width: 640px) {
+        display: none;
+      }
+    }
+  }
+  // .subscribe__about
+  &__about {
+    z-index: 2;
+
+    @media (max-width: 1040px) {
+      text-align: center;
+    }
+  }
+  // .subscribe__title
+  &__title {
+    font-family: 'Cabin', 'serif';
+    @include adaptiv-mp(35, 24, "font-size");
+    font-weight: 700;
+    line-height: 1.16;
+    margin-bottom: toRem(12);
+  }
+  // .subscribe__text
+  &__text {
+  }
+  // .subscribe__form
+  &__form {
+    display: flex;
+    gap: toRem(20);
+    align-items: center;
+    z-index: 2;
+
+    @media (max-width: 768.9px) {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+  // .subscribe__input
+  &__input {
+    color: $dark;
+    width: 100%;
+    max-width: toRem(311);
+    padding: toRem(22) toRem(33);
+    background-color: $white;
+    border: 1px solid #E3E3E3;
+    border-radius: 54px;
+
+    @media (max-width: 768.9px) {
+      text-align: center;
+      max-width: 100%;
+    }
+
+    &::placeholder {
+      color: #A9A9A9;
+      font-family: 'Lato';
+      font-size: toRem(16);
+      font-weight: 400;
+      line-height: 1.475;
+    }
+  }
+  // .subscribe__button
+  &__button {
+    padding: toRem(15) toRem(45);
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $white;
+      }
+    }
+
+    @media (max-width: 768.9px) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+
+.about__hero {
+  background-image: url(@img/about-hero/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &::before {
+    background-image: url(@img/about-hero/bg.jpg);
+  }
+}

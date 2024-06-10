@@ -1,0 +1,151 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+
+.book {
+  @include adaptiv-mp(150, 70, margin-bottom);
+  --padding: 30px;
+  padding: 0 var(--padding);
+
+  @media (max-width: 768.9px) {
+    --padding: 15px;
+  }
+  // .book__container
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(30);
+    align-items: center;
+    background-color: $dark;
+    border-radius: toRem(30);
+    padding: 0 toRem(90) 0 toRem(115);
+
+    @media (max-width: 768.9px) {
+      justify-content: center;
+      padding: 0 toRem(20);
+    }
+  }
+  // .book__grouptitle
+  &__grouptitle {
+    margin-bottom: toRem(21);
+
+    @media (max-width: 768.9px) {
+      text-align: center;
+    }
+    // .book__grouptitle .grouptitle__title
+    .grouptitle__title {
+      margin-bottom: toRem(8);
+
+      @media (max-width: 768.9px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    // .book__grouptitle .grouptitle__subtitle
+    .grouptitle__subtitle {
+      margin-bottom: toRem(8);
+    }
+    // .book__grouptitle .grouptitle__text
+    .grouptitle__text {
+    }
+  }
+  // .book__about
+  &__about {
+    flex-basis: toRem(423);
+    padding: toRem(30) 0;
+
+    @media (max-width: 768.9px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-basis: toRem(440);
+    }
+  }
+  // .book__button 
+  &__button {
+    position: relative;
+    padding: toRem(16) toRem(16) toRem(16) toRem(49);
+
+    @media (any-hover: hover) {
+
+			&:hover {
+        background-color: $yellow;
+
+        &::before {
+          animation-name: phoneCallAbsolute;
+          animation-duration: 0.5s;
+        }
+      }
+		}
+
+    @media (max-width: 768.9px) {
+      margin: 0 auto;
+    }
+
+    // .book__button::before
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: toRem(30);
+      width: toRem(22);
+      height: toRem(22);
+      transform: translate(-50%, -50%);
+      background-image: url(@img/icons/icons.svg#book);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  picture {
+    @media (max-width: 768.9px) {
+      display: none;
+    }
+  }
+  // .book__image
+  &__image {
+
+    @media (max-width: 768.9px) {
+      display: none;
+    }
+  }
+}
+.container {
+}
+
+.button {
+  // .button--yellow
+  &--yellow {
+  }
+}
+
+@keyframes phoneCallAbsolute {
+    0% {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+    12% {
+      transform: translate(-50%, -50%) rotate(15deg);
+    }
+    25% {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+    37% {
+      transform: translate(-50%, -50%) rotate(-15deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+    62% {
+      transform: translate(-50%, -50%) rotate(15deg);
+    }
+    75% {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+    87% {
+      transform: translate(-50%, -50%) rotate(-15deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+}

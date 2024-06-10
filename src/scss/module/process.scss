@@ -1,0 +1,59 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+.process {
+
+    // .process__list
+    &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(56);
+  
+    @media (max-width: 768.9px) {
+      gap: toRem(20);
+      justify-content: space-between;
+    }
+  }
+  // .process__item
+  &__item {
+    display: flex;
+    gap: toRem(16);
+  
+    @media (max-width: 520px) {
+      justify-content: center;
+      width: 100%;
+  
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+  // .process__item-icon
+  &__item-icon {
+    flex-shrink: 0;
+  
+    @media (max-width: 520px) {
+      width: toRem(40);
+      height: toRem(40);
+    }
+  }
+  // .process__item-about
+  &__item-about {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(4);
+  }
+  // .process__item-name
+  &__item-name {
+  }
+  // .process__item-data
+  &__item-data {
+    color: $dark;
+  
+    font-family: 'Cabin', 'serif';
+    @include adaptiv-mp(20, 16, "font-size");
+    font-weight: 600;
+    line-height: 1.16;
+  }
+}

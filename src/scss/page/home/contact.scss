@@ -1,0 +1,21 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.home__contact {
+  transform: translateY(-150px);
+  margin-bottom: -80px;
+
+  .contact__container {
+    
+    &::before {
+      top: toRem(-64);
+      left: toRem(-64);
+      width: toRem(270);
+      height: toRem(270);
+      background-image: url(@img/icons/icons.svg#decor-dot-328x328);
+      z-index: -1;
+    }
+  }
+}

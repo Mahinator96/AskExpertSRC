@@ -1,0 +1,12 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.blog__hero::before {
+  background-image: url(@img/hero/blog-hero.jpg);
+
+  @media (max-width: 768.9px) {
+    background-image: url(@img/hero/blog-hero-mobile.jpg);
+  }
+}

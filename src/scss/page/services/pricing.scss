@@ -1,0 +1,46 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.pricing {
+  @include adaptiv-mp(150, 70, padding-top);
+  @include adaptiv-mp(150, 70, padding-bottom);
+  @include adaptiv-mp(150, 70, margin-bottom);
+  background-color: $gray;
+  // .pricing__container
+  &__container {
+  }
+  // .pricing__grouptitle
+  &__grouptitle {
+    margin-bottom: toRem(40);
+    // .pricing__grouptitle .grouptitle__title
+    .grouptitle__title {
+      margin-bottom: toRem(22);
+
+    }
+  }
+  // .pricing__list
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: toRem(30) toRem(20);
+
+    @media (max-width: 1040px) {
+      // justify-content: space-between;
+    }
+  }
+  // .pricing__item
+  &__item {
+    width: calc((100% / 3) - 24.5px);
+
+    @media (max-width: 1040px) {
+      width: calc(50% - 10.5px);
+    }
+
+    @media (max-width: 640.9px) {
+      width: 100%;
+    }
+  }
+}

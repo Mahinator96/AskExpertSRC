@@ -1,0 +1,23 @@
+@import "./_var.scss";
+@import "./_function.scss";
+@import "./_mixin.scss";
+
+  // .services__item
+  .services-item {
+    padding: toRem(49) toRem(47);
+    background-color: #EBEBEB;
+    border-radius: toRem(20);
+    transition: .3s ease;
+
+    @media (max-width: 1040px) {
+      padding: toRem(30) toRem(20);
+    }
+
+    &-icon {
+      margin-bottom: toRem(25);
+    }
+    // .services__item-title
+    &-title {
+      margin-bottom: toRem(10);
+    }
+  }

@@ -1,0 +1,34 @@
+/* 
+	$maxW - ширина экрана с которой начинается изменение $value в меньшую сторону экрана до $minWidth (задана в var.scss)
+	$minW - ширина экрана на которой изменение $value прекращается на значении $mobSize
+*/
+@mixin adaptiv-mp($pcSize, $mobSize, $value, $maxW: null, $minW: null, $metrik: px) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - $minWidth;
+
+	@if ($minW) {
+		#{$value}: calc(#{$mobSize + $metrik} + #{$addSize} * ((100vw - #{$minW + $metrik}) / (#{$maxWidth} - #{$minW} + #{$minWidth})));
+	} @else {
+		#{$value}: calc(#{$mobSize + $metrik} + #{$addSize} * ((100vw - #{$minWidth + $metrik}) / #{$maxWidth}));
+	}
+
+	@if ($maxW) {
+		@media (min-width: #{$maxW + $metrik}) {
+			#{$value}: #{$pcSize + $metrik};
+		}
+	} @else {
+		@media (min-width: #{calc($maxWidth + $minWidth) + $metrik}) {
+			#{$value}: #{$pcSize + $metrik};
+		}
+	}
+
+	@if ($minW) {
+		@media (max-width: #{$minW + $metrik}) {
+			#{$value}: #{$mobSize + $metrik};
+		}
+	} @else {
+		@media (max-width: #{$minWidth + $metrik}) {
+			#{$value}: #{$mobSize + $metrik};
+		}
+	}
+}

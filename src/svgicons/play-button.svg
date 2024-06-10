@@ -1,0 +1,11 @@
+<svg width="109" height="109" viewBox="0 0 109 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Play Button">
+<g id="Icon">
+<circle cx="54.5" cy="54.5" r="54.5" fill="white" fill-opacity="0.08"/>
+<circle cx="54.5" cy="54.5" r="54.35" stroke="white" stroke-opacity="0.42" stroke-width="0.3"/>
+</g>
+<circle id="Icon_2" cx="54.5" cy="54.5" r="43.35" fill="white" fill-opacity="0.17" stroke="#D0D0D0" stroke-width="0.3"/>
+<circle id="Icon_3" cx="54.5" cy="54.5" r="33.5" fill="white"/>
+<path id="Icon_4" d="M51.0194 62.7189L59.6309 55.4472C59.7696 55.33 59.881 55.1846 59.9574 55.021C60.0337 54.8574 60.0732 54.6795 60.0732 54.4994C60.0732 54.3193 60.0337 54.1414 59.9574 53.9778C59.881 53.8142 59.7696 53.6688 59.6309 53.5516L51.0194 46.2799C50.1974 45.5859 48.9277 46.1613 48.9277 47.2278V61.7731C48.9277 62.8396 50.1974 63.4149 51.0194 62.7189Z" fill="#3B3A5D"/>
+</g>
+</svg>

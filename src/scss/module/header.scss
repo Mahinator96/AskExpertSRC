@@ -1,0 +1,192 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+/* HEADER */
+.header {
+	color: $white;
+	// .header__container
+	&__container {
+	}
+	// .header__wrapper
+	&__wrapper {
+	}
+	// .header__top
+	&__top {
+		font-size: toRem(14);
+		line-height: 1.6;
+		padding-top: toRem(18);
+		padding-bottom: toRem(18);
+		background-color: $dark;
+		// .header__top-container
+		&-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			gap: toRem(10) toRem(25);
+			
+			@media (max-width: 768.9px) {
+				justify-content: center;
+			}
+		}
+	}
+	// .header__top-schedule, .header__top-location
+	&__top-schedule,
+	&__top-location {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: toRem(10);
+
+		@media (max-width: 768.9px) {
+			display: none;
+		}
+		// .header__top-schedule::before, .header__top-location
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+	// .header__top-schedule
+	&__top-schedule {
+		padding-left: toRem(25);
+
+		// .header__top-schedule::before
+		&::before {
+			width: toRem(15);
+			height: toRem(16);
+			background-image: url(@img/icons/icons.svg#clock);
+		}
+	}
+	// .header__top-location
+	&__top-location  {
+		padding-left: 22px;
+
+		&::before {
+			width: toRem(12);
+			height: toRem(16);
+			background-image: url(@img/icons/icons.svg#mark);
+		}
+	}
+	// .header__top-list
+	&__top-list {
+		display: flex;
+		gap: toRem(10) toRem(25);
+	}
+	// .header__top-item
+	&__top-item {
+		transition: 0.3s ease;
+		// .header__top-item:hover
+		&:hover {
+			transform: translateY(-3px);
+		}
+	}
+	// .header__top-icon
+	&__top-icon {
+		width: 20px;
+		height: 20px;
+		// .header__top-icon--instagram path
+		&--instagram path{
+		}
+		// .header__top-icon--facebook
+		&--facebook path{
+		}
+		// .header__top-icon--twitter
+		&--twitter path{
+		}
+		// .header__top-icon--linkedin
+		&--linkedin path{
+		}
+	}
+	// .header__bottom
+	&__bottom {
+		background-color: #2F2F2F;
+		padding-top: toRem(20);
+		padding-bottom: toRem(20);
+		// .header__bottom-container 
+		&-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: toRem(25);
+			padding-top: toRem(20);
+			padding-bottom: toRem(20);
+		}
+	}
+	// .header__bottom-logo
+	&__bottom-logo {
+		display: flex;
+		align-items: center;
+		@include adaptiv-mp(183, 135, width, null, 769);
+	}
+	// .header__bottom-icon
+	&__bottom-icon {
+	}
+	// .header__bottom-button
+	&__bottom-button {
+		flex-shrink: 0;
+		padding: toRem(10) toRem(20) toRem(10) toRem(64);
+
+		@media (any-hover: hover) {
+			&:hover::before {
+				animation-name: phoneCall;
+				animation-duration: 0.5s;
+			}
+		}
+
+		@media (max-width: 1040px) {
+			display: none;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: toRem(8);
+			width: toRem(44);
+			height: toRem(44);
+			background-image: url(@img/icons/icons.svg#header-phone);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}
+
+@keyframes phoneCall {
+	0% {
+		transform: translateY(-50%) rotate(0);
+	}
+	12% {
+		transform: translateY(-50%) rotate(15deg);
+	}
+	25% {
+		transform: translateY(-50%) rotate(0);
+	}
+	37% {
+		transform: translateY(-50%) rotate(-15deg);
+	}
+	50% {
+		transform: translateY(-50%) rotate(0);
+	}
+	62% {
+		transform: translateY(-50%) rotate(15deg);
+	}
+	75% {
+		transform: translateY(-50%) rotate(0);
+	}
+	87% {
+		transform: translateY(-50%) rotate(-15deg);
+	}
+	100% {
+		transform: translateY(-50%) rotate(0);
+	}
+}

@@ -1,0 +1,119 @@
+html {
+	height: 100%;
+  box-sizing: border-box;
+}
+* {
+  box-sizing: inherit;
+	scroll-behavior: smooth;
+}
+body{
+  @include adaptiv-mp(16, 14, "font-size");
+	font-family: $fontFamily;
+  font-weight: 400;
+	color: $mainColor;
+  position: relative;
+  min-width: $minWidth + px;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  line-height: 1.475;
+
+  &._lock {
+    overflow: hidden;
+
+		// body._lock .body-wrapper
+		.body-wrapper {
+			overflow: hidden;
+		}
+  }
+}
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+main {
+	flex-grow: 1;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+ol {
+	padding: 0;
+  margin: 0;
+}
+img {
+  object-fit: cover;
+}
+button, input, textarea, fieldset {
+  color: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+button, input, textarea, select {
+	cursor: pointer;
+}
+input, textarea, fieldset, select {
+	&:focus-visible {
+		outline: none;
+	}
+}
+textarea {
+  resize: none;
+}
+picture {
+	display: flex;
+  
+	source {
+		width: 0;
+		height: 0;
+	}
+	// picture img
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.container {
+	--width: 1200px;
+  --padding: 30px;
+  max-width: calc(var(--width) + var(--padding) * 2);
+  margin: 0 auto;
+  padding: 0 var(--padding);
+
+  @media (max-width: 768.9px) {
+    --padding: 15px;
+  }
+}
+

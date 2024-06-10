@@ -1,0 +1,49 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+.decor {
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  &__right {
+
+  }
+
+  &__left {
+
+    &-bottom {
+
+      &-dot::before {
+        width: toRem(328);
+        height: toRem(328);
+        bottom: toRem(-73);
+        left: toRem(-73);
+        background-image: url(@img/icons/icons.svg#decor-dot-328x328);
+      }
+
+      &-green {
+        
+        &::before {
+          width: toRem(164);
+          height: toRem(183);
+          bottom: toRem(-27);
+          left: toRem(-39);
+          background-image: url(@img/icons/icons.svg#decor-green-164x183);
+        }
+
+        &::after {
+
+        }
+      }
+      
+    }
+  }
+}

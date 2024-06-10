@@ -1,0 +1,12 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.study__hero::before {
+  background-image: url(@img/hero/study-hero.jpg);
+
+  @media (max-width: 1040px) {
+    background-image: url(@img/hero/study-hero-mobile.jpg);
+  }
+}

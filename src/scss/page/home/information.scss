@@ -1,0 +1,179 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.information {
+  @include adaptiv-mp(150, 50, padding-top);
+  @include adaptiv-mp(150, 50, padding-bottom);
+  @include adaptiv-mp(120, 40, margin-bottom);
+  background-color: $gray;
+  // .information__container
+  &__container {
+  }
+  // .information__grouptitle
+  &__grouptitle {
+    margin-bottom: toRem(16);
+    // .information__grouptitle .grouptitle__title
+    .grouptitle__title {
+      margin-bottom: toRem(8);
+    }
+    // .information__grouptitle .grouptitle__subtitle
+    .grouptitle__subtitle {
+    }
+  }
+  // .information__wrapper
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(50) toRem(30);
+
+    @media (max-width: 640.9px) {
+      flex-direction: column;
+    }
+  }
+  // .information__left, information__right
+  &__left,
+  &__right {
+    max-width: toRem(500);
+  }
+  // .information__left
+  &__left {
+    max-width: toRem(500);
+    
+    // .information__left .information__title
+    .information__title {
+      background-color: $green;
+    }
+    // .information__left .information__item
+    .information__item {
+      @include adaptiv-mp(60, 30, padding-left);
+      
+      // .information__left .information__item-decor::before
+      &-decor::before {
+        border-color: $green;
+      }
+    }
+  }
+  // .information__right
+  &__right {
+    max-width: toRem(500);
+    
+    // .information__right .information__title
+    .information__title {
+      margin-left: auto;
+      background-color: $yellow;;
+
+      @media (max-width: 640.9px) {
+        margin-left: 0;
+      }
+    }
+    //  .information__right .information__item
+    .information__item {
+      // padding-right: toRem(60);
+      @include adaptiv-mp(60, 30, padding-right);
+
+      @media (max-width: 640.9px) {
+        padding-right: 0;
+        @include adaptiv-mp(60, 30, padding-left);
+      }
+
+      //  .information__right .information__item-decor
+      &-decor {
+        left: auto;
+        right: 0;
+
+        @media (max-width: 640.9px) {
+          right: auto;
+          left: 0;
+        }
+        
+        //  .information__right .information__item-decor::before
+        &::before {
+          border-color: $yellow;
+        }
+      } 
+    }
+  }
+  // .information__title
+  &__title {
+    @include adaptiv-mp(16, 14, "font-size");
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 0 toRem(14);
+    margin-bottom: toRem(40);
+    border-radius: toRem(20);
+
+    @media (max-width: 640.9px) {
+      margin-bottom: toRem(20);
+    }
+  }
+  // .information__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(60);
+
+    @media (max-width: 640.9px) {
+      gap: toRem(30);
+    }
+  }
+  // .information__item
+  &__item {
+    position: relative;
+
+    // .information__item-decor
+    &-decor {
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include adaptiv-mp(33, 16, width);
+      height: 100%;
+
+      // .information__item-decor::before
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        @include adaptiv-mp(33, 16, width);
+        @include adaptiv-mp(33, 16, height);
+        background-color: $white;
+        border-radius: 50%;
+        z-index: 2;
+        border-style: solid;
+        @include adaptiv-mp(10, 5, border-width);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: toRem(1);
+        height: 100%;
+        border: 1px dashed $dark;
+      }
+    }
+  }
+  // .information__item-date
+  &__item-date {
+    color: #8A8A8A;
+    @include adaptiv-mp(18, 14, "font-size");
+    margin-bottom: toRem(2);
+  }
+  // .information__item-job
+  &__item-job {
+    font-family: 'Cabin', 'serif';
+    @include adaptiv-mp(25, 22, "font-size");
+    font-weight: 500;
+    line-height: 1.16; /* 29px */
+    @include adaptiv-mp(20, 10, margin-bottom);
+  }
+  // .information__item-text
+  &__item-text {
+    max-width: 31.25em;
+  }
+}

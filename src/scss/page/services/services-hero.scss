@@ -1,0 +1,23 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.services {
+  // .services__hero
+  &__hero {
+    margin-bottom: 0;
+    // .services__hero::before
+    &::before {
+      background-image: url(@img/services-hero/bg.jpg);
+      background-position: right;
+
+      @media (max-width: 768.9px) {
+        background-image: url(@img/services-hero/bg-mobile.jpg);
+        background-position: center;
+      }
+    }
+  } 
+}
+
+

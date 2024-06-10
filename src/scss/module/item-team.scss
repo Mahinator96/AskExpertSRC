@@ -1,0 +1,95 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+.item-team {
+
+  @media (any-hover: hover) {
+
+    // .item-team:hover
+    &:hover {
+
+      // .item-team__img
+      .item-team__img  img {
+        transform: scale(1.07);
+      }
+      // .item-team:hover .item-team__job
+      .item-team__job {
+        background-color: $yellow;
+        color: $dark;
+      }
+    }
+  }
+
+  // .item-team__img
+  &__img {
+    position: relative;
+    max-height: toRem(392);
+    // height: 100%;
+    margin-bottom: toRem(25);
+    border-radius: toRem(20);
+    overflow: hidden;
+    
+    // .item-team__img picture
+    picture, img {
+      height: 100%;
+      transition: 0.3s ease;
+    }
+  }
+  // .item-team__job
+  &__job {
+    position: absolute;
+    font-weight: 600;
+    line-height: 1.6;
+    color: $white;
+    bottom: toRem(25);
+    right: toRem(20);
+    padding: toRem(4) toRem(21);
+    background-color: $dark;
+    border-radius: toRem(29);
+    transition: .3s ease;
+
+    // // .item-team__job:hover
+    // &:hover {
+    //   background-color: $yellow;
+    //   color: $dark;
+    // }
+  }
+  // .item-team__about
+  &__about {
+    text-align: center;
+    margin-bottom: toRem(27);
+    padding: 0 toRem(19);
+    // .item-team__about-name
+    // .item-team__about-name
+    &-name {
+      color: $dark;
+      font-family: 'Cabin', 'serif';
+      @include adaptiv-mp(30, 25, "font-size");
+      font-weight: 700;
+      line-height: 1.16; /* 34.8px */
+      margin-bottom: toRem(13);
+    }
+    // .item-team__about-responsibilities
+    &__responsibilities {
+    }
+  }
+  // .item-team__socials
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: toRem(29);
+  }
+  // .item-team__social
+  &__social {
+    flex-basis: toRem(25);
+    height: toRem(25);
+    transition: 0.3s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.2)
+      }
+    }
+  }
+}

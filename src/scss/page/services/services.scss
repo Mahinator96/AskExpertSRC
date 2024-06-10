@@ -1,0 +1,60 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.services {
+      @include adaptiv-mp(170, 70, padding-bottom);
+      @include adaptiv-mp(170, 70, padding-top);
+      background-color: $gray;
+
+  // .services__container
+  &__container {
+  }
+  // .services .grouptitle
+  .grouptitle {
+    margin-bottom: toRem(38);
+  }
+  // .services .grouptitle__title
+  .grouptitle__title {
+    margin-bottom: toRem(8);
+  }
+  // .services .grouptitle__subtitle
+  .grouptitle__subtitle {
+    max-width: 17.35em;
+  }
+  // .services__list
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: toRem(20);
+  }
+  // .services__item
+  &__item {
+    max-width: calc((100% / 3) - 14px);
+
+    @media (max-width: 768.9px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: calc((100% / 2) - 10px);
+    }
+
+    @media (max-width: 520px) {
+      max-width: 100%;
+    }
+
+    @media (any-hover: hover) {
+      // .services__item:hover
+      &:hover {
+        background-color: $dark;
+        color: $white;
+      }
+    }
+  }
+  // .services__item-text
+  &__item-text {
+  }
+}

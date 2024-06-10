@@ -1,0 +1,96 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+.grouptitle {
+  // .grouptitle--white
+  &--white {
+    color: $white;
+
+    // .grouptitle--white .grouptitle__subtitle
+    .grouptitle__subtitle {
+      color: $white;
+      // .grouptitle--white .grouptitle__subtitle span
+      span {
+        color: #727272;
+      }
+    }
+  }
+  // .grouptitle--center
+  &--center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &--main {
+    max-width: fit-content;
+    width: 100%;
+    padding: toRem(48) toRem(60);
+    border-radius: toRem(29);
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8.5px);
+    @media (max-width: 768.9px) {
+      padding: toRem(20) toRem(30);
+    }
+
+    .grouptitle__subtitle {
+      @include adaptiv-mp(50, 26, "font-size");
+    }
+  }
+
+  // .grouptitle .grouptitle__title
+  &__title {
+    @include adaptiv-mp(16, 12, "font-size");
+    font-weight: 400;
+    text-transform: uppercase;    
+    letter-spacing: 0.145em;
+    text-transform: uppercase;
+    color: $dark;
+    width: fit-content;
+    padding: 0 toRem(14);
+    border-radius: toRem(20);
+    
+    // .grouptitle ..grouptitle__title--yellow
+    &--yellow {
+      background-color: $yellow;
+    }
+    // .grouptitle ..grouptitle__title--white
+    &--white {
+      background-color: $white;
+    }
+    // .grouptitle ..grouptitle__title--green
+    &--green {
+      color: $white;
+      background-color: $green;
+    }
+    // .grouptitle ..grouptitle__title--dark
+    &--dark {
+      color: $white;
+      background-color: #323232;
+    }
+  }
+  // .grouptitle__subtitle
+  &__subtitle {
+    font-family: 'Cabin', 'sans-serif';
+    @include adaptiv-mp(45, 30, "font-size");
+    font-weight: 700;
+    line-height: 1.16; /* 52.2px */
+    color: $dark;
+
+    // .grouptitle__subtitle--main
+    &--main {
+      font-size: toRem(50);
+    }
+  }
+
+  &__text {
+
+    &--green {
+      color: $green;
+      font-size: toRem(18);
+      font-weight: 700;
+    }
+  }
+}

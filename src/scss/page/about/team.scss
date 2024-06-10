@@ -1,0 +1,54 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+
+.team {
+  background-color: $gray;
+  @include adaptiv-mp(150, 70, padding-top);
+  @include adaptiv-mp(150, 70, padding-bottom);
+  @include adaptiv-mp(150, 70, margin-bottom);
+
+  // .team__container
+  &__container {
+  }
+  // .grouptitle
+  .grouptitle {
+    margin-bottom: toRem(44);
+
+    @media (max-width: 768.9px) {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    // .grouptitle__title
+    &__title {
+      margin-bottom: toRem(22);
+    }
+    // .grouptitle__subtitle
+    &__subtitle {
+      margin-bottom: toRem(11);
+      max-width: 11.06em;
+    }
+    // .grouptitle__text
+    &__text {
+      max-width: 40.1875em;
+    }
+  }
+  
+  // .team__list
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(30) toRem(15);
+
+    @media (max-width: 768.9px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  // .team__item
+  &__item {
+    max-width: toRem(366);
+  }
+}

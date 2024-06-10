@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="description" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro totam, repudiandae earum et atque expedita! Similique libero omnis animi reiciendis velit, quasi aliquid sint blanditiis mollitia eligendi? Minima, est sapiente!">
+		<meta name="keywords" content="agency team, business, coach, finance, project, AskExperts, Boost, better website, consuting">
+
+		<meta name="Author" content="John Smit">
+		<meta name="Address" content="USA Office, 195 Devonshire St Boston, MA 02110">
+		<meta name="Copyright" content="Adam Sendler"> 
+
+		@@include('module/favicon.html')
+		
+		<title>AskExperts | Home</title>
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/home.css">
+
+		<script src="js/app.min.js" defer></script>
+	</head>
+
+<body>
+	
+	<div class="body-wrapper">
+		@@include('module/header.html')
+		
+		<main>
+			@@include('page/home/hero.html')
+			@@include('page/home/about.html')
+			@@include('page/home/services.html')
+			@@include('page/home/experiance.html')
+			@@include('page/home/work.html')
+			@@include('page/home/information.html')
+			@@include('page/home/review.html')
+			@@include('page/home/team.html')
+			@@include('page/home/plan.html')
+			@@include('page/home/contact.html')
+		</main>
+
+		@@include('module/footer.html')
+		@@include('module/modal.html')
+		@@include('module/modal-plan.html')
+		@@include('module/modal-contact.html')
+	</div>
+</body>
+</html>

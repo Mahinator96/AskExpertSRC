@@ -1,0 +1,8 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.hero__grouptitle .grouptitle__subtitle {
+  margin-bottom: toRem(20);
+}

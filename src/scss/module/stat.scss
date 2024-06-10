@@ -1,0 +1,33 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+.stat {
+  &--anim {
+
+    .stat-item {
+      opacity: 1;
+    }
+  }
+  // .stat-item
+  &-item {
+    opacity: 0;
+    transition: opacity 0.2s linear;
+
+    @media (max-width: 1040px) {
+      text-align: center;
+      flex-grow: 1;
+    }
+  }
+  // .stat-num
+  &-num {
+    // font-size: toRem(50);
+    @include adaptiv-mp(50, 20, "font-size");
+    font-weight: 700;
+    color: $dark;
+  }
+  // .stat-title
+  &-title {
+    @include adaptiv-mp(18, 12, "font-size");
+  }
+}

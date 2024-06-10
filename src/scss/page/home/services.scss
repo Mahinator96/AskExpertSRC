@@ -1,0 +1,193 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+/* SERVICES */
+
+.services {
+  @include adaptiv-mp(150, 70, padding-top);
+  @include adaptiv-mp(150, 70, padding-bottom);
+  background-color: $gray;
+
+  &__container {
+    --padding: 100px;
+
+    @media (max-width: 1040px) {
+      --padding: 60px;
+    }
+    @media (max-width: 768.9px) {
+      --padding: 15px;
+    }
+  }
+  // .services__grouptitle
+  &__grouptitle {
+    max-width: toRem(782);
+    margin: 0 auto;
+
+    // .services__grouptitle .grouptitle__title
+    .grouptitle__title {
+      margin-bottom: toRem(8);
+    }
+    // .services__grouptitle .grouptitle__subtitle
+    .grouptitle__subtitle {
+      max-width: 17.35em;
+      margin-bottom: toRem(50);
+    }
+  }
+  // .services__slider
+  &__slider {
+    position: relative;
+    max-height: toRem(520);
+    height: 100%;
+    overflow: visible;
+
+    &-wrapper {
+      padding: toRem(23) toRem(22) toRem(38);
+      background-color: #EBEBEB;
+      border-radius: toRem(20);
+
+      @media (max-width: 768.9px) {
+        padding: 0;
+      }
+    }
+  }
+  
+  // services-slide
+  &-slide {
+
+    &__img {
+      width: 100%;
+      height: toRem(254);
+      border-radius: toRem(20);
+      margin-bottom: toRem(29);
+
+      @media (max-width: 768.9px) {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    &__about {
+
+      @media (max-width: 768.9px) {
+        padding: toRem(0) toRem(14) toRem(23);
+      }
+    }
+
+    &__title {
+      color: #181818;
+      font-family: Cabin;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 116%; /* 29px */
+      margin-bottom: toRem(10);
+    }
+
+    &__text {
+      margin-bottom: toRem(26);
+    }
+
+    &__button {
+      color: #353535;
+      padding: toRem(11) toRem(36);
+
+      @media (any-hover: hover) {
+        
+        &:hover {
+          color: $white;
+          background-color: $dark;
+        }
+      }
+
+    }
+  }
+  // .services__slider-button
+  &__slider-button {
+    position: absolute;
+    width: toRem(180);
+    height: toRem(180);
+    top: 50%;
+    transform: translateY(-50%);    
+    z-index: 2;
+    cursor: pointer;
+
+    @media (max-width: 1040px) {
+      width: toRem(100);
+      height: toRem(100);
+    }
+    @media (max-width: 768.9px) {
+      width: toRem(60);
+      height: toRem(60);
+    }
+    // .services__slider-button::before
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.30);
+      border-radius: 50%;
+      backdrop-filter: blur(7px);
+    }
+    // .services__slider-button::after
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: toRem(70);
+      height: toRem(70);      
+      background-color: $dark;
+      border-radius: 50%;
+      background-image: url(@img/icons/icons.svg#arrow-white);
+      background-size: toRem(19) toRem(25);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media (max-width: 1040px) {
+        width: toRem(38);
+        height: toRem(38);  
+        background-size: toRem(11) toRem(9);
+      }
+      @media (max-width: 768.9px) {
+        width: toRem(22);
+        height: toRem(22);  
+        background-size: toRem(7) toRem(5);
+      }
+    }
+    // .services__slider-button.swiper-button-disabled::after
+    &.swiper-button-disabled::after {
+      background-color: $white;
+      background-image: url(@img/icons/icons.svg#arrow);
+    }
+    // .services__slider-button--prev
+      &--prev {
+      left: toRem(-90);
+
+      @media (max-width: 1040px) {
+        left: toRem(-50);
+      }
+      @media (max-width: 768.9px) {
+        left: toRem(-10);
+      }
+    }
+    // .services__slider-button--next
+    &--next {
+      right: toRem(-90);
+
+      @media (max-width: 1040px) {
+        right: toRem(-50);
+      }
+      @media (max-width: 768.9px) {
+        right: toRem(-10);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(180deg);
+      }
+    }
+  }
+}

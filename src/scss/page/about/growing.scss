@@ -1,0 +1,180 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+
+.growing {
+  @include adaptiv-mp(100, 50, padding-top);
+  @include adaptiv-mp(100, 50, padding-bottom);
+  @include adaptiv-mp(150, 70, margin-bottom);
+  background-color: $gray;
+  // .growing__top
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(20) toRem(30);
+    margin-bottom: toRem(34);
+    align-items: end;
+
+    @media (max-width: 640.9px) {
+      flex-direction: column;
+      align-items: center;
+
+    }
+  }
+  // .growing__grouptitle
+  &__grouptitle {
+    @media (max-width: 640.9px) {
+      text-align: center;
+
+
+    }
+    // .growing__grouptitle .grouptitle__title
+    .grouptitle__title {
+      margin-bottom: toRem(8);
+      
+      @media (max-width: 640.9px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    // .growing__grouptitle .grouptitle__subtitle
+    .grouptitle__subtitle {
+      margin-bottom: toRem(11);
+      max-width: 13.06em;
+
+      @media (max-width: 640.9px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    // .growing__grouptitle .grouptitle__text
+    .grouptitle__text {
+      max-width: 36.75em;
+    }
+  }
+  // .growing__top-button
+  &__top-button {
+    border: 2px solid tranparent;
+    @include adaptiv-mp(15, 8, padding-top);
+    @include adaptiv-mp(15, 8, padding-bottom);
+    @include adaptiv-mp(34, 18, padding-right);
+    @include adaptiv-mp(34, 18, padding-left);
+    flex-shrink: 0;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $dark;
+        background-color: transparent;
+        border-color: $dark;
+      }
+    }
+  }
+  // .growing__items
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: toRem(20);
+
+    @media (max-width: 1040px) {
+      flex-wrap: wrap;
+      align-items: normal;
+    }
+
+  }
+  // .growing__item
+  &__item {
+    display: flex;
+    max-width: calc(25%);
+    background-color: $white;
+    border-radius: 20px;
+    border: 1px solid #EAEAEA;
+    transition: 0.3s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: translateY(-3px) scale(1.07);
+      }
+    }
+
+    @media (max-width: 1040px) {
+      flex-grow: 1;
+      max-width: calc(50% - 10px);
+    }
+
+    @media (max-width: 640.9px) {
+      max-width: 100%;
+    }
+  }
+  // .growing__link
+  &__link {
+    display: flex;
+    flex-direction: column;
+    @include adaptiv-mp(36, 20, padding-top);
+    @include adaptiv-mp(36, 20, padding-bottom);
+    @include adaptiv-mp(24, 13, padding-left);
+    @include adaptiv-mp(24, 13, padding-right);
+
+    @media (max-width: 640.9px) {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+  // .growing__icon
+  &__icon {
+    @include adaptiv-mp(53, 40, max-width);
+    @include adaptiv-mp(53, 40, max-height);
+    @include adaptiv-mp(22, 15, margin-bottom);
+  }
+  // .growing__item-title
+  &__item-title {
+    color: $dark;
+    font-family: 'Cabin', serif;
+    @include adaptiv-mp(20, 18, "font-size");
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.16; /* 23.2px */
+    margin-bottom: toRem(10);
+  }
+  // .growing__item-text
+  &__item-text {
+    @include adaptiv-mp(22, 15, margin-bottom);
+
+    @media (max-width: 1040px) {
+      flex-grow: 1;
+    }
+    @media (max-width: 640.9px) {
+      max-width: 24.4em;
+    }
+
+  }
+  // .growing__item-button
+  &__item-button {
+    position: relative;
+    font-weight: 600;
+    line-height: 1.6; /* 28.8px */
+    width: fit-content;
+    color: $dark;
+    padding-right: toRem(23);
+
+    @media (max-width: 640.9px) {
+      margin-left: auto;
+    }
+
+    // .growing__item-button::before
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: toRem(13);
+      height: toRem(11);
+      background-image: url(@img/icons/icons.svg#growing-arrow);
+      background-size: container;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}

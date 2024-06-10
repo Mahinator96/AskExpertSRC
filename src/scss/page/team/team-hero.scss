@@ -1,0 +1,15 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.team-hero {
+
+  &__hero {
+    @include adaptiv-mp(140, 70, margin-bottom);
+
+    &::before {
+      background-image: url('@img/hero/team-hero-bg.jpg');
+    }
+  }
+}

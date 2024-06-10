@@ -1,0 +1,59 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.history {
+  background-color: $dark;
+  @include adaptiv-mp(150, 70, padding-top);
+  @include adaptiv-mp(150, 70, padding-bottom);
+  @include adaptiv-mp(180, 70, margin-bottom);
+  // .history__container
+  &__container {
+  }
+  // .history__grouptitle
+  &__grouptitle {
+    margin-bottom: toRem(47);
+    // .history__grouptitle .grouptitle__title
+    .grouptitle__title {
+      margin: toRem(22);
+    }
+    // .history__grouptitle .grouptitle__subtitle
+    .grouptitle__subtitle {
+      max-width: 11.6em;
+    }
+  }
+  // .history__video
+  &__video {
+    max-width: toRem(832);
+    z-index: 2;
+
+    // .history__video::before, // .history__video::after
+    &::before, &::after {
+      content: '';
+      position: absolute;
+    }
+    // .history__video::before
+    &::before {
+      top: -10.97%;
+      left: -7.45%;
+      width: 34.95%;
+      height: 89.96%;
+      background-image: url(@img/icons/icons.svg#history-single-video);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    // .history__video::before
+    &::after {
+      right: -4.68%;
+      bottom: -5.95%;
+      width: 19.71%;
+      height: 57.68%;
+      border-radius: 20px;
+      background: $yellow;
+      z-index: -1;
+    }
+
+  }
+}

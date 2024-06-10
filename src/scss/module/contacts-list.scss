@@ -1,0 +1,49 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: toRem(56);
+  // .contacts-list__item
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(4);
+    padding-left: toRem(69);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+    // .contacts-list__item span
+    span {
+      color: $dark;
+      font-family: 'Cabin', 'serif';
+      font-size: toRem(20);
+      font-weight: 600;
+      line-height: 1.16; /* 23.2px */
+    }
+    // .contacts-list__item--phone
+    &--phone::before {
+      background-image: url(@img/icons/icons.svg#contact-phone);
+    }
+    // .contacts-list__item--time
+    &--time::before {
+      background-image: url(@img/icons/icons.svg#contact-time);
+    }
+    // .contacts-list__item--mark
+    &--mark::before {
+      background-image: url(@img/icons/icons.svg#contact-mark);
+    }
+  }
+}

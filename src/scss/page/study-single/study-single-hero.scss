@@ -1,0 +1,11 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.study-single__hero {
+
+  &::before {
+    background-image: url(@img/hero/study-single-hero.jpg);
+  }
+}

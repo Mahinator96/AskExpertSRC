@@ -1,0 +1,19 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.contacts__hero {
+
+  &::before {
+    background-image: url(@img/hero/contacts-hero.jpg);
+
+    @media (max-width: 640.9px) {
+      background-image: url(@img/hero/contacts-hero-mobile.jpg);
+    }
+  }
+
+  .grouptitle__subtitle {
+    max-width: 9.4em;
+  }
+}

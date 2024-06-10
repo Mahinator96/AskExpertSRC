@@ -1,0 +1,130 @@
+@import "../../_var.scss";
+@import "../../_function.scss";
+@import "../../_mixin.scss";
+ 
+
+.work {
+  @include adaptiv-mp(84, 50, margin-top);
+  @include adaptiv-mp(84, 50, margin-bottom);
+  // .work__container
+  &__container {
+    @include adaptiv-mp(87, 40, margin-bottom);
+  }
+
+  // .work__about
+  &__about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toRem(20);
+
+    @media (max-width: 768.9px) {
+      flex-direction: column;
+    }
+  }
+  // .work__decor
+  &__decor {
+    position: relative;
+    max-width: toRem(634);
+
+    @media (max-width: 768.9px) {
+      display: none;
+    }
+
+    // .work__decor::::before, .work__decor::::after
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: -1;
+    }
+
+    // .work__decor::::before
+    &::before {
+      top: -16.91%;
+      left: -14.98%;
+      width: 51.73%;
+      height: 92.13%;
+      background-image: url(@img/icons/icons.svg#decor-dot-328x328);
+    }
+    // .work__decor::::after
+    &::after {
+      top: -6.56%;
+      left: -5.67%;
+      width: 26.28%;
+      height: 46.21%;
+      background-image: url(@img/icons/icons.svg#decor-green-164x183);
+    }
+  }
+  // .work__decor-img
+  &__decor-img {
+    border-radius: toRem(28);
+  }
+  // .work__grouptitle
+  &__grouptitle {
+    max-width: toRem(481);
+    
+
+    // .work__grouptitle .grouptitle__title
+    .grouptitle__title {
+      margin-bottom: toRem(14);
+
+    }
+    // .work__grouptitle .grouptitle__subtitle
+    .grouptitle__subtitle {
+      margin-bottom: toRem(13);
+
+    }
+    // .work__grouptitle .grouptitle__text
+    .grouptitle__text {
+      margin-bottom: toRem(24);
+  }
+  }
+  // .work__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(18);
+    
+  }
+  // .work__item
+  &__item {
+    position: relative;
+    padding-left: toRem(40);
+    
+
+    @media (max-width: 768.9px) {
+      padding-left: toRem(30);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: toRem(20);
+      height: toRem(20);
+      background-image: url(@img/icons/icons.svg#work-ok);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__brands {
+    padding-left: toRem(55);
+    padding-right: toRem(55);
+    opacity: 0.6;
+
+    @media (max-width: 1040px) {
+      padding-left: toRem(30);
+      padding-right: toRem(30);
+    }
+    @media (max-width: 768.9px) {
+      padding-left: toRem(15);
+      padding-right: toRem(15);
+    }
+  }
+}

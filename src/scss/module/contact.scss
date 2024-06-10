@@ -1,0 +1,100 @@
+@import "../_var.scss";
+@import "../_function.scss";
+@import "../_mixin.scss";
+
+.contact {
+  @include adaptiv-mp(150, 70, margin-bottom);
+  --padding: 30px;
+  padding: 0 var(--padding);
+
+  @media (max-width: 768.9px) {
+    --padding: 15px;
+  }
+  
+  // .contact__container
+  &__container {
+    position: relative;
+    padding: toRem(75) toRem(100) !important;
+    background-color: $dark;
+    border-radius: toRem(30);
+
+    @media (max-width: 768.9px) {
+      background-image: url(@img/contact/bg-mobile.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    @media (max-width: 768.9px) {
+      padding: toRem(40) toRem(20) !important;
+    }    
+
+    // .contact::before, .contact::after
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &::after {
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 48%;
+      background-image: url(@img/contact/bg.png);
+      background-position: left center;
+      border-top-right-radius: toRem(30);
+      border-bottom-right-radius: toRem(30);
+
+      @media (max-width: 1040px) {
+        width: 35%;
+      }
+      @media (max-width: 768.9px) {
+        background-image: none;
+        inset: 0;
+        width: 100%;
+        background-color: rgba($dark, 0.93);
+        border-radius: toRem(20);
+      }
+    }
+  }
+  // .contact__wrapper
+  &__wrapper {
+    position: relative;
+    max-width: toRem(500);
+    width: 100%;
+    z-index: 2;
+
+    @media (max-width: 768.9px) {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+  // .contact__grauptitle
+  &__grouptitle {
+    margin-bottom: toRem(12);
+    // .contact__grauptitle .grouptitle__title
+    .grouptitle__title {
+      margin-bottom: toRem(12);
+
+      @media (max-width: 768.9px) {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    // .contact__grauptitle .grouptitle__subtitle
+    .grouptitle__subtitle {
+      color: $white;
+      margin-bottom: toRem(5);
+    }
+    // .contact__grauptitle .grouptitle__text
+    .grouptitle__text {
+      max-width: 27.5em;
+    }
+  }
+}
